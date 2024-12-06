@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://bod3rj8prep4m"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_oqdq2"]
+[ext_resource type="PackedScene" uid="uid://b7t2u65eplg7w" path="res://all_dice/dice_rest.tscn" id="2_fmsw8"]
+[ext_resource type="Script" path="res://fps.gd" id="3_rpdso"]
+[ext_resource type="PackedScene" uid="uid://cgb4fx7peelcg" path="res://Actions_Set.tscn" id="4_6t2hi"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_oqdq2")
+
+[node name="coalLabel" type="Label" parent="."]
+offset_left = 49.0
+offset_top = 13.0
+offset_right = 92.0
+offset_bottom = 39.0
+text = "Coal: "
+
+[node name="woodLabel" type="Label" parent="."]
+offset_left = 211.0
+offset_top = 10.0
+offset_right = 330.0
+offset_bottom = 45.0
+text = "Wood:"
+
+[node name="foodLabel" type="Label" parent="."]
+offset_left = 131.0
+offset_top = 12.0
+offset_right = 174.0
+offset_bottom = 38.0
+text = "Food:"
+
+[node name="ironLabel" type="Label" parent="."]
+offset_left = 406.0
+offset_top = 8.0
+offset_right = 446.0
+offset_bottom = 34.0
+text = "Iron:"
+
+[node name="stoneLabel" type="Label" parent="."]
+offset_left = 470.0
+offset_top = 14.0
+offset_right = 519.0
+offset_bottom = 40.0
+text = "Stone:"
+
+[node name="temperatureLabel" type="Label" parent="."]
+offset_left = 854.0
+offset_top = 15.0
+offset_right = 894.0
+offset_bottom = 38.0
+text = "C: "
+metadata/_edit_use_anchors_ = true
+
+[node name="fiberLabel" type="Label" parent="."]
+offset_left = 320.0
+offset_top = 7.0
+offset_right = 364.0
+offset_bottom = 33.0
+text = "Fiber:"
+
+[node name="fps" type="Label" parent="."]
+offset_left = 1085.0
+offset_top = 16.0
+offset_right = 1125.0
+offset_bottom = 42.0
+script = ExtResource("3_rpdso")
+
+[node name="SettingsButton" type="Button" parent="."]
+offset_left = 960.0
+offset_top = 15.0
+offset_right = 1042.0
+offset_bottom = 46.0
+text = "SETTINGS"
+
+[node name="Actions_Set" parent="." instance=ExtResource("4_6t2hi")]
+position = Vector2(0, -30)
+
+[node name="dice_rest" parent="." instance=ExtResource("2_fmsw8")]
+offset_top = 346.0
+offset_bottom = 404.592
+
+[connection signal="pressed" from="SettingsButton" to="Actions_Set" method="_on_settings_button_pressed"]

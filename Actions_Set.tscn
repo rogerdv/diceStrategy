@@ -1,0 +1,524 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgb4fx7peelcg"]
+
+[ext_resource type="Script" path="res://Actions_Set.gd" id="1_h4533"]
+[ext_resource type="PackedScene" uid="uid://dkjb55cr2kjx2" path="res://action/action.tscn" id="1_le6kn"]
+
+[node name="Actions_Set" type="Node2D"]
+script = ExtResource("1_h4533")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_top = 117.0
+offset_right = 1152.0
+offset_bottom = 392.0
+
+[node name="Resources" type="GridContainer" parent="TabContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 225
+theme_override_constants/v_separation = 110
+columns = 5
+
+[node name="Container" type="Control" parent="TabContainer/Resources"]
+layout_mode = 2
+
+[node name="wood_harvesting" parent="TabContainer/Resources/Container" instance=ExtResource("1_le6kn")]
+custom_text = "Gathering wood from trees or logs, using tools like axes."
+action_name = "Wood Harvesting"
+
+[node name="Container2" type="Control" parent="TabContainer/Resources"]
+layout_mode = 2
+
+[node name="fiber_harvesting" parent="TabContainer/Resources/Container2" instance=ExtResource("1_le6kn")]
+custom_text = "Gathering FIBER"
+action_type = 1
+action_name = "Fiber Harvesting"
+
+[node name="Container3" type="Control" parent="TabContainer/Resources"]
+layout_mode = 2
+
+[node name="food_harvesting" parent="TabContainer/Resources/Container3" instance=ExtResource("1_le6kn")]
+custom_text = "Collecting edible plants, fruits, or other food resources from the environment."
+action_type = 2
+action_name = "Food Harvesting"
+
+[node name="Container4" type="Control" parent="TabContainer/Resources"]
+layout_mode = 2
+
+[node name="stone_harvesting" parent="TabContainer/Resources/Container4" instance=ExtResource("1_le6kn")]
+custom_text = "Extracting stone materials, possibly for construction or tool-making."
+action_type = 4
+action_name = "Stone Harvesting"
+
+[node name="Container5" type="Control" parent="TabContainer/Resources"]
+layout_mode = 2
+
+[node name="coal_harvesting" parent="TabContainer/Resources/Container5" instance=ExtResource("1_le6kn")]
+custom_text = "Obtaining carbon-based resources, potentially for fuel or crafting."
+action_type = 5
+action_name = "Coal Harvesting"
+
+[node name="Container6" type="Control" parent="TabContainer/Resources"]
+layout_mode = 2
+
+[node name="Make Charcoal" parent="TabContainer/Resources/Container6" instance=ExtResource("1_le6kn")]
+custom_text = "Making charcoal from wood"
+action_type = 3
+action_name = "Make Charcoal"
+
+[node name="Hunting" type="GridContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 225
+theme_override_constants/v_separation = 110
+columns = 5
+
+[node name="Control" type="Control" parent="TabContainer/Hunting"]
+layout_mode = 2
+
+[node name="hunt_no_weapons" parent="TabContainer/Hunting/Control" instance=ExtResource("1_le6kn")]
+custom_text = "Hunting animals without the use of any tools or weapons."
+action_type = 8
+action_name = "Hunt No Weapons"
+
+[node name="Control2" type="Control" parent="TabContainer/Hunting"]
+layout_mode = 2
+
+[node name="hunt_with_spear" parent="TabContainer/Hunting/Control2" instance=ExtResource("1_le6kn")]
+custom_text = "Hunt with spear"
+person_give = "Hunt with spear"
+action_type = 9
+action_name = "Hunt With Spear"
+
+[node name="Control3" type="Control" parent="TabContainer/Hunting"]
+layout_mode = 2
+
+[node name="hunt_with_bow" parent="TabContainer/Hunting/Control3" instance=ExtResource("1_le6kn")]
+custom_text = "hunt with bow"
+action_type = 10
+action_name = "Hunt with bow"
+
+[node name="Control4" type="Control" parent="TabContainer/Hunting"]
+layout_mode = 2
+
+[node name="hunt_with_trap" parent="TabContainer/Hunting/Control4" instance=ExtResource("1_le6kn")]
+custom_text = "hunt with trap"
+action_type = 11
+action_name = "hunt with trap"
+
+[node name="Building" type="GridContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 225
+theme_override_constants/v_separation = 110
+columns = 5
+
+[node name="improvised_shelter" type="Control" parent="TabContainer/Building"]
+layout_mode = 2
+
+[node name="build_improvised_shelter" parent="TabContainer/Building/improvised_shelter" instance=ExtResource("1_le6kn")]
+custom_text = "Build Improvised Shelter"
+action_type = 12
+action_name = "Build Improvised Shelter"
+craft = true
+resources_needed = {
+0: 1,
+1: 1
+}
+manpower = 3
+manpower_fixed = 3
+
+[node name="simple_refuge" type="Control" parent="TabContainer/Building"]
+layout_mode = 2
+
+[node name="build_simple_refuge" parent="TabContainer/Building/simple_refuge" instance=ExtResource("1_le6kn")]
+custom_text = "Build simple refuge"
+action_type = 13
+action_name = "Build simple refuge"
+craft = true
+resources_needed = {
+0: 1,
+1: 1,
+3: 1
+}
+manpower = 5
+manpower_fixed = 5
+
+[node name="bonfire_cover" type="Control" parent="TabContainer/Building"]
+layout_mode = 2
+
+[node name="build_bonfire_cover" parent="TabContainer/Building/bonfire_cover" instance=ExtResource("1_le6kn")]
+custom_text = "Build bonfire cover"
+action_type = 20
+tot_limit = 1
+fixed_daily_limit = 1
+action_name = "Build bonfire cover"
+craft = true
+resources_needed = {
+0: 1,
+1: 1,
+3: 1
+}
+manpower = 1
+manpower_fixed = 1
+
+[node name="simple_house" type="Control" parent="TabContainer/Building"]
+layout_mode = 2
+
+[node name="build_simple_house" parent="TabContainer/Building/simple_house" instance=ExtResource("1_le6kn")]
+custom_text = "Build simple house"
+action_type = 14
+person_name = "Build simple house"
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+manpower = 9
+manpower_fixed = 9
+
+[node name="oven" type="Control" parent="TabContainer/Building"]
+layout_mode = 2
+
+[node name="build_oven" parent="TabContainer/Building/oven" instance=ExtResource("1_le6kn")]
+custom_text = "Build Oven"
+action_type = 15
+action_name = "Build Oven"
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+manpower = 6
+manpower_fixed = 6
+
+[node name="big_oven" type="Control" parent="TabContainer/Building"]
+layout_mode = 2
+
+[node name="build_big_oven" parent="TabContainer/Building/big_oven" instance=ExtResource("1_le6kn")]
+custom_text = "Build Big Oven"
+action_type = 16
+action_name = "Build Big Oven"
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+manpower = 10
+manpower_fixed = 10
+
+[node name="warehouse" type="Control" parent="TabContainer/Building"]
+layout_mode = 2
+
+[node name="build_warehouse" parent="TabContainer/Building/warehouse" instance=ExtResource("1_le6kn")]
+custom_text = "Build Warehouse"
+action_type = 17
+tot_limit = 8
+fixed_daily_limit = 8
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+manpower = 8
+manpower_fixed = 8
+
+[node name="big_warehouse" type="Control" parent="TabContainer/Building"]
+layout_mode = 2
+
+[node name="build_big_warehouse" parent="TabContainer/Building/big_warehouse" instance=ExtResource("1_le6kn")]
+custom_text = "Build big warehouse"
+action_type = 18
+tot_limit = 12
+fixed_daily_limit = 12
+action_name = "Build big warehouse"
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+manpower = 12
+manpower_fixed = 12
+
+[node name="fences" type="Control" parent="TabContainer/Building"]
+layout_mode = 2
+
+[node name="build_fences" parent="TabContainer/Building/fences" instance=ExtResource("1_le6kn")]
+custom_text = "Build fences"
+action_type = 19
+action_name = "Build fences"
+craft = true
+resources_needed = {
+0: 1
+}
+manpower = 12
+manpower_fixed = 12
+
+[node name="Tools" type="GridContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 225
+theme_override_constants/v_separation = 110
+columns = 5
+
+[node name="Control" type="Control" parent="TabContainer/Tools"]
+layout_mode = 2
+
+[node name="build_pickaxe" parent="TabContainer/Tools/Control" instance=ExtResource("1_le6kn")]
+custom_text = "Build Pickaxe"
+action_type = 30
+action_name = "Build Pickaxe"
+craft = true
+resources_needed = {
+0: 1,
+1: 1,
+3: 1
+}
+
+[node name="Control2" type="Control" parent="TabContainer/Tools"]
+layout_mode = 2
+
+[node name="build_saw" parent="TabContainer/Tools/Control2" instance=ExtResource("1_le6kn")]
+custom_text = "Build Saw"
+action_type = 29
+action_name = "Build Saw"
+craft = true
+resources_needed = {
+0: 1,
+1: 1,
+3: 1
+}
+
+[node name="Control3" type="Control" parent="TabContainer/Tools"]
+layout_mode = 2
+
+[node name="build_cart" parent="TabContainer/Tools/Control3" instance=ExtResource("1_le6kn")]
+custom_text = "Build Cart"
+action_type = 31
+action_name = "Build Cart"
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+
+[node name="Control4" type="Control" parent="TabContainer/Tools"]
+layout_mode = 2
+
+[node name="build_spear" parent="TabContainer/Tools/Control4" instance=ExtResource("1_le6kn")]
+custom_text = "Build Spear"
+action_type = 25
+action_name = "Build Spear"
+craft = true
+resources_needed = {
+0: 1,
+1: 1,
+3: 1
+}
+
+[node name="Control5" type="Control" parent="TabContainer/Tools"]
+layout_mode = 2
+
+[node name="build_bow" parent="TabContainer/Tools/Control5" instance=ExtResource("1_le6kn")]
+custom_text = "Build Bow"
+action_type = 26
+action_name = "Build Bow"
+craft = true
+resources_needed = {
+0: 1,
+1: 1,
+3: 1
+}
+
+[node name="Control6" type="Control" parent="TabContainer/Tools"]
+layout_mode = 2
+
+[node name="build_bonfire" parent="TabContainer/Tools/Control6" instance=ExtResource("1_le6kn")]
+custom_text = "Build Bonfire"
+action_type = 32
+action_name = "Improve Bonfire"
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+
+[node name="Control7" type="Control" parent="TabContainer/Tools"]
+layout_mode = 2
+
+[node name="improve_bonfire" parent="TabContainer/Tools/Control7" instance=ExtResource("1_le6kn")]
+custom_text = "Improve Bonfire"
+action_type = 33
+action_name = "Improve bonfire"
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+
+[node name="Control8" type="Control" parent="TabContainer/Tools"]
+layout_mode = 2
+
+[node name="build_arrow" parent="TabContainer/Tools/Control8" instance=ExtResource("1_le6kn")]
+custom_text = "Build Arrow"
+action_type = 27
+action_name = "Build Arrow"
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+
+[node name="Control9" type="Control" parent="TabContainer/Tools"]
+layout_mode = 2
+
+[node name="build_trap" parent="TabContainer/Tools/Control9" instance=ExtResource("1_le6kn")]
+custom_text = "Build Trap"
+action_type = 28
+action_name = "Build Trap"
+craft = true
+resources_needed = {
+0: 1,
+1: 1,
+2: 1
+}
+
+[node name="Other" type="GridContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 225
+theme_override_constants/v_separation = 125
+columns = 5
+
+[node name="Control" type="Control" parent="TabContainer/Other"]
+layout_mode = 2
+
+[node name="helping_hand" parent="TabContainer/Other/Control" instance=ExtResource("1_le6kn")]
+custom_text = "Helping hand"
+action_type = 34
+fixed_daily_limit = 1
+daily_limit = 1
+action_name = "Helping hand"
+
+[node name="Control2" type="Control" parent="TabContainer/Other"]
+layout_mode = 2
+
+[node name="quick_nap" parent="TabContainer/Other/Control2" instance=ExtResource("1_le6kn")]
+custom_text = "quick nap"
+action_type = 36
+fixed_daily_limit = 1
+action_name = "quick nap"
+
+[node name="Control3" type="Control" parent="TabContainer/Other"]
+layout_mode = 2
+
+[node name="stand_guard" parent="TabContainer/Other/Control3" instance=ExtResource("1_le6kn")]
+custom_text = "stand_guard"
+action_type = 35
+fixed_daily_limit = 1
+action_name = "stand_guard"
+
+[node name="Control4" type="Control" parent="TabContainer/Other"]
+layout_mode = 2
+
+[node name="inspiring_speech" parent="TabContainer/Other/Control4" instance=ExtResource("1_le6kn")]
+custom_text = "inspiring speech"
+action_type = 37
+fixed_daily_limit = 1
+action_name = "inspiring speech"
+
+[node name="Control5" type="Control" parent="TabContainer/Other"]
+layout_mode = 2
+
+[node name="training" parent="TabContainer/Other/Control5" instance=ExtResource("1_le6kn")]
+custom_text = "training"
+action_type = 38
+fixed_daily_limit = 1
+action_name = "training"
+
+[node name="Control6" type="Control" parent="TabContainer/Other"]
+layout_mode = 2
+
+[node name="rest" parent="TabContainer/Other/Control6" instance=ExtResource("1_le6kn")]
+custom_text = "rest"
+action_type = 39
+fixed_daily_limit = 1
+action_name = "rest"
+
+[node name="Repair" type="GridContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 225
+theme_override_constants/v_separation = 125
+columns = 5
+
+[node name="repair_bonfire_cover" type="Control" parent="TabContainer/Repair"]
+layout_mode = 2
+
+[node name="repair_bonfire_cover" parent="TabContainer/Repair/repair_bonfire_cover" instance=ExtResource("1_le6kn")]
+custom_text = "Repair bonfire cover"
+action_type = 20
+disabled = true
+tot_limit = 1
+fixed_daily_limit = 1
+action_name = "Repair bonfire cover"
+craft = true
+resources_needed = {
+0: 1,
+1: 1,
+3: 1
+}
+manpower = 1
+manpower_fixed = 1
+
+[node name="repair_oven" type="Control" parent="TabContainer/Repair"]
+layout_mode = 2
+
+[node name="repair_oven" parent="TabContainer/Repair/repair_oven" instance=ExtResource("1_le6kn")]
+custom_text = "Repair Oven"
+action_type = 21
+disabled = true
+tot_limit = 1
+fixed_daily_limit = 1
+action_name = "Repair Oven"
+resources_needed = {
+0: 1,
+3: 1
+}
+manpower = 2
+manpower_fixed = 2
+
+[node name="repair_big_oven" type="Control" parent="TabContainer/Repair"]
+layout_mode = 2
+
+[node name="repair_big_oven" parent="TabContainer/Repair/repair_big_oven" instance=ExtResource("1_le6kn")]
+custom_text = "Repair Big Oven"
+action_type = 22
+disabled = true
+tot_limit = 1
+fixed_daily_limit = 1
+action_name = "Repair Big Oven"
+craft = true
+resources_needed = {
+0: 1,
+3: 1
+}
+manpower = 4
+manpower_fixed = 4
+
+[node name="repair_fences" type="Control" parent="TabContainer/Repair"]
+layout_mode = 2
+
+[node name="repair_fences" parent="TabContainer/Repair/repair_fences" instance=ExtResource("1_le6kn")]
+custom_text = "Repair fences"
+action_type = 23
+disabled = true
+tot_limit = 1
+fixed_daily_limit = 1
+action_name = "Repair fences"
+craft = true
+resources_needed = {
+0: 1
+}
+manpower = 1
+manpower_fixed = 1
+
+[connection signal="tab_changed" from="TabContainer" to="." method="_on_tab_container_tab_changed"]

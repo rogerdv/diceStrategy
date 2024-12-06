@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cetytoobv6c6g"]
+
+[ext_resource type="Script" path="res://dialogue/dialogue.gd" id="1_8wg4q"]
+[ext_resource type="Texture2D" uid="uid://d23mxhhxpqpp8" path="res://game_assets/dialogue/dialogue_box.png" id="2_y3bcp"]
+
+[node name="dialogue" type="MarginContainer"]
+script = ExtResource("1_8wg4q")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_y3bcp")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
