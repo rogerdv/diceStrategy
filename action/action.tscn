@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://action/action.gd" id="1_x361a"]
 [ext_resource type="Texture2D" uid="uid://cnkrol407y11n" path="res://game_assets/new_actio.png" id="2_50d2k"]
-[ext_resource type="Script" path="res://drop_zone.gd" id="3_gh8k1"]
+[ext_resource type="Script" path="res://scripts/drop_zone.gd" id="3_gh8k1"]
+
 
 [node name="Action" type="Node2D" groups=["action"]]
 position = Vector2(120, 75)

@@ -1,6 +1,6 @@
 extends Node2D
 
-const DiceScenePath: String = "res://all_dice/dice.tscn"
+const DiceScenePath: String = "res://scenes/all_dice/dice.tscn"
 var dice_scene = preload(DiceScenePath)
 #@export var companion = {}
 @export var emotions = {}

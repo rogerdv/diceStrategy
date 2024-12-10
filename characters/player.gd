@@ -1,6 +1,6 @@
 extends Node2D
 
-const DiceScenePath: String = "res://all_dice/dice.tscn"
+const DiceScenePath: String = "res://scenes/all_dice/dice.tscn"
 var dice_scene = preload(DiceScenePath)
 signal player_removed
 signal dice_added
@@ -15,7 +15,7 @@ func _process(delta):
 
 func set_dice():
 	var dice = dice_scene.instantiate()
-	dice.connect("inner_dice_removed", Callable(self, "_on_inner_dice_removed"))
+	dice.connect("inner_dice_removed", _on_inner_dice_removed)
 	dice._assign_character("player")
 	dice.scale = Vector2(0.4, 0.4)
 	add_child.call_deferred(dice)

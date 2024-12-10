@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dcp1xpqdlkb0t"]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
-position = Vector2i(400, 200)
-visible = true
-dialog_text = "prova!"
